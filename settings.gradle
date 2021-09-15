@@ -1,0 +1,7 @@
+include Modules.app
+include Modules.historyScreen
+include Modules.core
+include Modules.model
+include Modules.repository
+include Modules.utils
+
