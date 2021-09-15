@@ -89,7 +89,7 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.menu_history -> {
-                startActivity(Intent(this, HistoryActivity::class.java))
+//                startActivity(Intent(this, HistoryActivity::class.java))
                 true
             }
             R.id.menu_history_room -> {
@@ -130,9 +130,9 @@ class MainActivity : BaseActivity<AppState, MainInteractor>() {
             .setMessage("Please enter word")
             .setPositiveButton("Search") { dialog, _ ->
                 // input.text.toString() все ломает
-                startActivity(
-                    HistoryActivity.getIntent(this, getStringFromEditable(input.text))
-                )
+//                startActivity(
+//                    HistoryActivity.getIntent(this, getStringFromEditable(input.text))
+//                )
                 dialog.cancel()
             }
             .setNegativeButton("Cancel") { dialog, _ ->
