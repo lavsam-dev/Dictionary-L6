@@ -1,7 +1,6 @@
 package geekbrains.ru.core
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import geekbrains.ru.core.viewmodel.BaseViewModel
@@ -19,8 +18,8 @@ abstract class BaseActivity<T : AppState, I : Interactor<T>> : AppCompatActivity
     abstract val model: BaseViewModel<T>
     protected var isNetworkAvailable: Boolean = false
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         isNetworkAvailable = isOnline(applicationContext)
     }
 

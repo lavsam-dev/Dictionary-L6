@@ -17,4 +17,5 @@
     <string name="dialog_tittle_sorry">Sorry</string>
     <string name="menu_title_history">History</string>
     <string name="menu_title_history_room">History local</string>
+    <string name="title_historyscreenfeature">History Screen Feature</string>
 </resources>

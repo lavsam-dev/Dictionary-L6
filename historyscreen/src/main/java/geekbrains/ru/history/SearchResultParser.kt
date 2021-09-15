@@ -4,10 +4,6 @@ import geekbrains.ru.model.data.AppState
 import geekbrains.ru.model.data.DataModel
 import geekbrains.ru.model.data.Meanings
 
-fun parseOnlineSearchResults(state: AppState): AppState {
-    return AppState.Success(mapResult(state, true))
-}
-
 fun parseLocalSearchResults(data: AppState): AppState {
     return AppState.Success(mapResult(data, false))
 }
