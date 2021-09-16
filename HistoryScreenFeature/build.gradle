@@ -1,0 +1,42 @@
+apply plugin: 'com.android.dynamic-feature'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+    }
+}
+
+dependencies {
+    //AndroidX
+    implementation Tools.multidex
+    implementation Design.appcompat
+
+    //Design
+    //You should not use the com.android.support and com.google.android.material dependencies in your app at the same time
+    implementation Design.material
+
+    //Kotlin
+    implementation Kotlin.core
+    implementation Kotlin.stdlib
+    implementation Kotlin.coroutines_core
+    implementation Kotlin.coroutines_android
+
+    //Download images
+    //Picasso
+    implementation Picasso.picasso
+    //Glide
+    implementation Glide.glide
+    kapt Glide.glide_compiler
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':app')
+}
