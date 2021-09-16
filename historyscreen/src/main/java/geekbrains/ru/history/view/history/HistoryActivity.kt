@@ -10,8 +10,6 @@ import geekbrains.ru.model.data.DataModel
 import kotlinx.android.synthetic.main.activity_history.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
-private const val SEARCH_WORD_EXTRA = "f76a288a-5dcc-43f1-ba89-7fe1d53f63b1"
-
 class HistoryActivity : BaseActivity<AppState, HistoryInteractor>() {
 
     override lateinit var model: HistoryViewModel
@@ -26,10 +24,12 @@ class HistoryActivity : BaseActivity<AppState, HistoryInteractor>() {
 
     override fun onResume() {
         super.onResume()
-        val bundle = intent.extras
-        var word = bundle?.getString(SEARCH_WORD_EXTRA)
-        if (word == null) word = ""
-//        var word = "run"
+        var word = intent.extras?.get(SEARCH_WORD_EXTRA).toString()
+        if (word.isNullOrEmpty()) {
+            word = ""
+        } else {
+            if (word == "null") word = ""
+        }
         model.getData(word, false)
     }
 
